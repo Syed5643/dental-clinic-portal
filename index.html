@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Clinic Name] | Dental Clinic in [City]</title>
+<meta name="description" content="[Clinic Name], [City]. Scaling, root canal, implants, whitening, extractions and family dentistry. Open Mon–Sat [Morning Hours] and [Evening Hours], Sunday [Sunday Hours]. Call [Phone Number].">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { ink:'#0B3B4A', teal:{DEFAULT:'#1A8B94', dark:'#146F77'}, mint:'#DDF3EE', mist:'#EEF6F9', slate2:'#4A6672' },
+  fontFamily: { serif:['Fraunces','Georgia','serif'], sans:['Figtree','system-ui','sans-serif'] }
+}}}
+</script>
+<style>
+  body{font-family:'Figtree',system-ui,sans-serif;color:#0B3B4A;background:#fff}
+  h1,h2,h3,.brand{font-family:'Fraunces',Georgia,serif;letter-spacing:-.01em}
+  :focus-visible{outline:3px solid #1A8B94;outline-offset:3px;border-radius:6px}
+  html{scroll-padding-top:84px}
+  .hero-in{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero-in.d2{animation-delay:.15s}
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .tx{transition:transform .25s ease, box-shadow .25s ease, background .25s ease}
+  .tcard:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(11,59,74,.35)}
+  .tcard[aria-expanded="true"] .more{max-height:200px;opacity:1;margin-top:.75rem}
+  .tcard[aria-expanded="true"] .chev{transform:rotate(180deg)}
+  .more{max-height:0;opacity:0;overflow:hidden;transition:all .35s ease}
+  .chev{transition:transform .25s}
+  @media (prefers-reduced-motion:reduce){.hero-in{animation:none}*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-ink/10">
+  <div class="max-w-6xl mx-auto px-5 h-[72px] flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2.5" aria-label="Home">
+      <svg viewBox="0 0 32 32" class="w-8 h-8" fill="none" stroke="#1A8B94" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5c-3 0-5 2.5-5 6 0 4 2 6 3 10 .7 3 1.6 6 3.3 6 2 0 1.8-5 4.7-5s2.700 5 4.700 5c1.700 0 2.600-3 3.300-6 1-4 3-6 3-10 0-3.500-2-6-5-6-2.500 0-3.500 1.200-6 1.200S11.500 5 9 5z"/></svg>
+      <span class="brand font-semibold text-lg leading-none">[Clinic Name] <span class="text-teal block text-[11px] tracking-wide font-sans font-semibold mt-1">Dental Care</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] font-medium text-slate2" aria-label="Main">
+      <a class="hover:text-teal" href="#about">About us</a>
+      <a class="hover:text-teal" href="#treatments">Treatments</a>
+      <a class="hover:text-teal" href="#why">Why choose us</a>
+      <a class="hover:text-teal" href="#hygiene">Sterilization</a>
+      <a class="hover:text-teal" href="#tour">Clinic tour</a>
+      <a class="hover:text-teal" href="#reviews">Patient stories</a>
+      <a class="hover:text-teal" href="#visit">Hours &amp; location</a>
+    </nav>
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="tel:+910000000000" class="flex items-center gap-2 font-semibold text-ink hover:text-teal"><i data-lucide="phone" class="w-4 h-4"></i>+91 [Phone Number]</a>
+      <a href="#visit" class="tx bg-ink text-white px-5 py-2.5 rounded-full font-semibold hover:bg-teal">Book consultation</a>
+    </div>
+    <button id="menuBtn" class="lg:hidden p-2 -mr-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+  </div>
+  <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-ink/10 px-5 pb-5">
+    <nav class="flex flex-col py-2 font-medium" aria-label="Mobile">
+      <a class="py-3 border-b border-ink/5" href="#about">About us</a>
+      <a class="py-3 border-b border-ink/5" href="#treatments">Treatments</a>
+      <a class="py-3 border-b border-ink/5" href="#why">Why choose us</a>
+      <a class="py-3 border-b border-ink/5" href="#hygiene">Sterilization</a>
+      <a class="py-3 border-b border-ink/5" href="#tour">Clinic tour</a>
+      <a class="py-3 border-b border-ink/5" href="#reviews">Patient stories</a>
+      <a class="py-3" href="#visit">Hours &amp; location</a>
+    </nav>
+    <div class="grid grid-cols-2 gap-3 mt-2">
+      <a href="tel:+910000000000" class="text-center py-3 rounded-full border border-ink font-semibold">Call now</a>
+      <a href="#visit" class="text-center py-3 rounded-full bg-ink text-white font-semibold">Book consultation</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="pt-[72px] bg-gradient-to-b from-mist to-white">
+  <div class="max-w-6xl mx-auto px-5 py-14 lg:py-20 grid lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-6">
+      <p class="hero-in inline-flex items-center gap-2 bg-mint text-teal-dark text-sm font-semibold px-3.5 py-1.5 rounded-full"><i data-lucide="map-pin" class="w-4 h-4"></i>[Clinic Location / Area, City]</p>
+      <h1 class="hero-in d2 mt-5 text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] font-semibold">Gentle, modern dental care for your whole family</h1>
+      <p class="hero-in d2 mt-5 text-lg text-slate2 max-w-xl leading-relaxed">Comfortable, painless treatment with a strict sterilization routine and a dentist who explains every step and every cost before beginning.</p>
+      <div class="hero-in d2 mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="#visit" class="tx inline-flex justify-center items-center gap-2 bg-ink text-white px-7 py-3.5 rounded-full font-semibold hover:bg-teal"><i data-lucide="calendar-check" class="w-5 h-5"></i>Schedule an appointment</a>
+        <a href="https://wa.me/910000000000?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="tx inline-flex justify-center items-center gap-2 bg-[#25D366] text-[#073B1D] px-7 py-3.5 rounded-full font-semibold hover:brightness-95"><i data-lucide="message-circle" class="w-5 h-5"></i>Chat on WhatsApp</a>
+      </div>
+      <ul class="mt-9 grid sm:grid-cols-3 gap-3 text-sm font-semibold">
+        <li class="flex items-center gap-2.5 bg-white border border-ink/10 rounded-xl px-3.5 py-3"><i data-lucide="shield-check" class="w-5 h-5 text-teal shrink-0"></i>Strict sterilization protocol</li>
+        <li class="flex items-center gap-2.5 bg-white border border-ink/10 rounded-xl px-3.5 py-3"><i data-lucide="smile" class="w-5 h-5 text-teal shrink-0"></i>Painless, gentle methods</li>
+        <li class="flex items-center gap-2.5 bg-white border border-ink/10 rounded-xl px-3.5 py-3"><i data-lucide="stethoscope" class="w-5 h-5 text-teal shrink-0"></i>Experienced dentist</li>
+      </ul>
+    </div>
+    <div class="lg:col-span-6 relative">
+      <div class="rounded-[2rem] overflow-hidden shadow-2xl shadow-ink/20 aspect-[4/3.2] bg-slate-200">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1080&q=80" alt="Clean dental operatory with treatment chair" class="w-full h-full object-cover" width="1080" height="713" fetchpriority="high">
+      </div>
+      <div class="absolute -bottom-5 left-4 sm:-left-5 bg-white rounded-2xl shadow-xl px-5 py-4 flex items-center gap-3 border border-ink/5">
+        <span class="w-11 h-11 rounded-full bg-mint grid place-items-center text-teal"><i data-lucide="clock" class="w-5 h-5"></i></span>
+        <div><p class="font-bold leading-tight">Morning &amp; evening clinic</p><p class="text-sm text-slate2">[Morning Hours] &amp; [Evening Hours], ideal for working families</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7 order-2 lg:order-1">
+      <h2 class="text-3xl sm:text-4xl font-semibold leading-tight">Meet [Doctor Name]</h2>
+      <p class="mt-2 font-semibold text-teal">[Degrees / Credentials], General Dentist &amp; Oral Care Specialist</p>
+      <p class="mt-6 text-lg text-slate2 leading-relaxed max-w-prose">[Doctor Name] is a qualified dental surgeon who believes good dentistry starts with a conversation. We listen first, show you what we see, and explain your options in plain language so you can decide what is right for you and your family.</p>
+      <p class="mt-4 text-lg text-slate2 leading-relaxed max-w-prose">Our approach is preventive: catch problems early, keep treatment simple, and avoid anything you do not need. Children, parents and grandparents are all welcome under one roof.</p>
+      <dl class="mt-8 grid sm:grid-cols-3 gap-4">
+        <div class="rounded-2xl bg-mist p-5"><dt class="font-semibold flex items-center gap-2"><i data-lucide="message-square-text" class="w-5 h-5 text-teal"></i>Clear advice</dt><dd class="mt-1.5 text-sm text-slate2">Every step and cost explained first.</dd></div>
+        <div class="rounded-2xl bg-mist p-5"><dt class="font-semibold flex items-center gap-2"><i data-lucide="sprout" class="w-5 h-5 text-teal"></i>Prevention first</dt><dd class="mt-1.5 text-sm text-slate2">Early care that saves teeth and money.</dd></div>
+        <div class="rounded-2xl bg-mist p-5"><dt class="font-semibold flex items-center gap-2"><i data-lucide="heart-handshake" class="w-5 h-5 text-teal"></i>Family friendly</dt><dd class="mt-1.5 text-sm text-slate2">Patient and calm with children.</dd></div>
+      </dl>
+    </div>
+    <div class="lg:col-span-5 order-1 lg:order-2">
+      <div class="rounded-3xl overflow-hidden shadow-xl shadow-ink/15 border border-ink/5 bg-slate-200">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1080&q=80" alt="Dentist portrait" class="w-full object-cover" width="1376" height="768" loading="lazy">
+      </div>
+      <div class="mt-4 rounded-3xl overflow-hidden border border-ink/5 bg-slate-200">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1080&q=80" alt="Reception and waiting area" class="w-full h-44 sm:h-56 object-cover" width="1080" height="709" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREATMENTS -->
+<section id="treatments" class="py-20 lg:py-28 bg-mist">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl sm:text-4xl font-semibold leading-tight">Treatments for every smile</h2>
+      <p class="mt-4 text-lg text-slate2">From a routine clean to a full replacement of missing teeth. Tap a card to see what is included.</p>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="tgrid">
+      <button class="tcard tx text-left bg-white rounded-2xl p-6 border border-ink/5" aria-expanded="false">
+        <span class="w-12 h-12 rounded-xl bg-mint text-teal grid place-items-center"><i data-lucide="sparkles" class="w-6 h-6"></i></span>
+        <h3 class="mt-5 text-xl font-semibold">Preventive &amp; pediatric dentistry</h3>
+        <p class="mt-2 text-slate2">Ultrasonic scaling, polishing, fluoride, fillings and gentle care for children.</p>
+        <span class="more block text-sm text-slate2 border-t border-ink/10 pt-3">Includes ultra scaling, sealants, cavity filling, fluoride application and child-friendly first visits.</span>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-teal">Details <i data-lucide="chevron-down" class="chev w-4 h-4"></i></span>
+      </button>
+      <button class="tcard tx text-left bg-white rounded-2xl p-6 border border-ink/5" aria-expanded="false">
+        <span class="w-12 h-12 rounded-xl bg-mint text-teal grid place-items-center"><i data-lucide="activity" class="w-6 h-6"></i></span>
+        <h3 class="mt-5 text-xl font-semibold">Root canal therapy</h3>
+        <p class="mt-2 text-slate2">Save a painful, infected tooth with a comfortable, well-numbed procedure.</p>
+        <span class="more block text-sm text-slate2 border-t border-ink/10 pt-3">Modern techniques aim to finish in as few visits as your tooth allows, followed by a crown to protect it.</span>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-teal">Details <i data-lucide="chevron-down" class="chev w-4 h-4"></i></span>
+      </button>
+      <button class="tcard tx text-left bg-white rounded-2xl p-6 border border-ink/5" aria-expanded="false">
+        <span class="w-12 h-12 rounded-xl bg-mint text-teal grid place-items-center"><i data-lucide="gem" class="w-6 h-6"></i></span>
+        <h3 class="mt-5 text-xl font-semibold">Cosmetic dentistry &amp; smile design</h3>
+        <p class="mt-2 text-slate2">Teeth bleaching, veneers and ceramic teeth sets for a brighter, even smile.</p>
+        <span class="more block text-sm text-slate2 border-t border-ink/10 pt-3">We plan the shade and shape with you first so the result looks natural on your face.</span>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-teal">Details <i data-lucide="chevron-down" class="chev w-4 h-4"></i></span>
+      </button>
+      <button class="tcard tx text-left bg-white rounded-2xl p-6 border border-ink/5" aria-expanded="false">
+        <span class="w-12 h-12 rounded-xl bg-mint text-teal grid place-items-center"><i data-lucide="align-center-horizontal" class="w-6 h-6"></i></span>
+        <h3 class="mt-5 text-xl font-semibold">Orthodontics &amp; clear aligners</h3>
+        <p class="mt-2 text-slate2">Straighten crowded or gapped teeth with braces or near-invisible aligners.</p>
+        <span class="more block text-sm text-slate2 border-t border-ink/10 pt-3">Start with a consultation to check suitability, expected duration and cost for you or your child.</span>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-teal">Details <i data-lucide="chevron-down" class="chev w-4 h-4"></i></span>
+      </button>
+      <button class="tcard tx text-left bg-white rounded-2xl p-6 border border-ink/5" aria-expanded="false">
+        <span class="w-12 h-12 rounded-xl bg-mint text-teal grid place-items-center"><i data-lucide="crown" class="w-6 h-6"></i></span>
+        <h3 class="mt-5 text-xl font-semibold">Implants, crowns &amp; bridges</h3>
+        <p class="mt-2 text-slate2">Replace missing teeth with fixed solutions that look and feel natural.</p>
+        <span class="more block text-sm text-slate2 border-t border-ink/10 pt-3">Dental implants, ceramic crowns and bridges restore chewing strength and a confident smile.</span>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-teal">Details <i data-lucide="chevron-down" class="chev w-4 h-4"></i></span>
+      </button>
+      <button class="tcard tx text-left bg-white rounded-2xl p-6 border border-ink/5" aria-expanded="false">
+        <span class="w-12 h-12 rounded-xl bg-mint text-teal grid place-items-center"><i data-lucide="scissors" class="w-6 h-6"></i></span>
+        <h3 class="mt-5 text-xl font-semibold">Extractions &amp; wisdom teeth</h3>
+        <p class="mt-2 text-slate2">Careful removal of damaged or impacted teeth with clear aftercare.</p>
+        <span class="more block text-sm text-slate2 border-t border-ink/10 pt-3">Local anesthesia, gentle technique and written aftercare so healing is quick and comfortable.</span>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-teal">Details <i data-lucide="chevron-down" class="chev w-4 h-4"></i></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="text-3xl sm:text-4xl font-semibold leading-tight max-w-2xl">Why patients trust us</h2>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+      <div><i data-lucide="flame" class="w-9 h-9 text-teal"></i><h3 class="mt-4 text-xl font-semibold">Autoclave sterilization</h3><p class="mt-2 text-slate2">Every patient's instruments are autoclaved and sealed in their own pouch. See our full routine below.</p></div>
+      <div><i data-lucide="scan-line" class="w-9 h-9 text-teal"></i><h3 class="mt-4 text-xl font-semibold">Digital imaging</h3><p class="mt-2 text-slate2">Digital X-rays show what is happening under the surface, so diagnosis is accurate and visible to you.</p></div>
+      <div><i data-lucide="syringe" class="w-9 h-9 text-teal"></i><h3 class="mt-4 text-xl font-semibold">Painless anesthesia</h3><p class="mt-2 text-slate2">Numbing gel first, then a slow, gentle injection, so you feel comfortable throughout.</p></div>
+      <div><i data-lucide="receipt-text" class="w-9 h-9 text-teal"></i><h3 class="mt-4 text-xl font-semibold">Transparent pricing</h3><p class="mt-2 text-slate2">You get a clear treatment plan and cost before we start. No surprises at the counter.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HYGIENE -->
+<section id="hygiene" class="py-20 lg:py-28 bg-mist">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl sm:text-4xl font-semibold leading-tight">Our sterilization routine, step by step</h2>
+      <p class="mt-4 text-lg text-slate2">Every patient gets freshly sterilized instruments, opened in front of them. This is the process behind each appointment.</p>
+    </div>
+    <ol class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <li class="bg-white rounded-2xl border border-ink/5 overflow-hidden flex flex-col">
+        <div class="w-full h-44 bg-mist flex items-center justify-center text-teal"><i data-lucide="waves" class="w-12 h-12"></i></div>
+        <div class="p-6 pt-4 flex-1"><span class="w-9 h-9 rounded-full bg-ink text-white grid place-items-center font-bold text-sm">1</span>
+          <h3 class="mt-4 text-xl font-semibold">Ultrasonic cleaning</h3>
+          <p class="mt-2 text-slate2">Dental burs and delicate instruments go through an ultrasonic bath that lifts away microscopic debris.</p></div>
+      </li>
+      <li class="bg-white rounded-2xl border border-ink/5 overflow-hidden flex flex-col">
+        <div class="w-full h-44 bg-mist flex items-center justify-center text-teal"><i data-lucide="box" class="w-12 h-12"></i></div>
+        <div class="p-6 pt-4 flex-1"><span class="w-9 h-9 rounded-full bg-ink text-white grid place-items-center font-bold text-sm">2</span>
+          <h3 class="mt-4 text-xl font-semibold">Individual pouch sealing</h3>
+          <p class="mt-2 text-slate2">Each patient's instruments are sealed in their own sterile pouch with a medical heat sealer before treatment.</p></div>
+      </li>
+      <li class="bg-white rounded-2xl border border-ink/5 overflow-hidden flex flex-col">
+        <div class="w-full h-44 bg-mist flex items-center justify-center text-teal"><i data-lucide="gauge" class="w-12 h-12"></i></div>
+        <div class="p-6 pt-4 flex-1"><span class="w-9 h-9 rounded-full bg-ink text-white grid place-items-center font-bold text-sm">3</span>
+          <h3 class="mt-4 text-xl font-semibold">Medical autoclaving</h3>
+          <p class="mt-2 text-slate2">High-pressure steam sterilization in the autoclave destroys bacteria, viruses and spores.</p></div>
+      </li>
+      <li class="bg-ink text-white rounded-2xl overflow-hidden flex flex-col">
+        <div class="h-44 grid place-items-center bg-white/5"><i data-lucide="package-open" class="w-16 h-16 text-mint" aria-hidden="true"></i></div>
+        <div class="p-6 pt-4 flex-1"><span class="w-9 h-9 rounded-full bg-mint text-ink grid place-items-center font-bold text-sm">4</span>
+          <h3 class="mt-4 text-xl font-semibold">Opened in front of you</h3>
+          <p class="mt-2 text-white/75">Instruments stay sealed until the pouch is opened chairside, in front of you, so you can see they are sterile.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- CLINIC TOUR -->
+<section id="tour" class="py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl sm:text-4xl font-semibold leading-tight">Take a look inside the clinic</h2>
+      <p class="mt-4 text-lg text-slate2">Clean, bright rooms and modern dental equipment.</p>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <figure class="rounded-2xl overflow-hidden bg-mist border border-ink/5">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="Clinic frontage and entrance" class="w-full h-64 object-cover" loading="lazy">
+        <figcaption class="px-5 py-3 text-sm font-semibold">Reception &amp; Waiting Lounge</figcaption></figure>
+      <figure class="rounded-2xl overflow-hidden bg-mist border border-ink/5">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Operatory treatment unit" class="w-full h-64 object-cover" loading="lazy">
+        <figcaption class="px-5 py-3 text-sm font-semibold">Operatory 1: Ergonomic dental suite</figcaption></figure>
+      <figure class="rounded-2xl overflow-hidden bg-mist border border-ink/5">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Operatory with chair and display" class="w-full h-64 object-cover" loading="lazy">
+        <figcaption class="px-5 py-3 text-sm font-semibold">Operatory 2: Consultation &amp; imaging unit</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="py-20 lg:py-28 bg-ink text-white">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="text-3xl sm:text-4xl font-semibold leading-tight max-w-2xl">Patient stories</h2>
+    <div class="mt-12 grid md:grid-cols-3 gap-5">
+      <figure class="bg-white/[0.07] border border-white/10 rounded-2xl p-7 flex flex-col">
+        <div class="flex gap-1 text-amber-300" aria-label="5 out of 5 stars"><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i></div>
+        <blockquote class="mt-4 text-lg leading-relaxed flex-1">I was terrified of a root canal. The doctor explained everything clearly and I felt comfortable throughout the procedure.</blockquote>
+        <figcaption class="mt-6 pt-4 border-t border-white/10"><p class="font-semibold">Patient Review</p><p class="text-sm text-white/65">Root canal therapy</p></figcaption>
+      </figure>
+      <figure class="bg-white/[0.07] border border-white/10 rounded-2xl p-7 flex flex-col">
+        <div class="flex gap-1 text-amber-300" aria-label="5 out of 5 stars"><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i></div>
+        <blockquote class="mt-4 text-lg leading-relaxed flex-1">My child was relaxed and comfortable during the visit. The clinic is spotless and all costs were transparent.</blockquote>
+        <figcaption class="mt-6 pt-4 border-t border-white/10"><p class="font-semibold">Patient Review</p><p class="text-sm text-white/65">Pediatric check-up</p></figcaption>
+      </figure>
+      <figure class="bg-white/[0.07] border border-white/10 rounded-2xl p-7 flex flex-col">
+        <div class="flex gap-1 text-amber-300" aria-label="5 out of 5 stars"><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i></div>
+        <blockquote class="mt-4 text-lg leading-relaxed flex-1">Great experience with teeth cleaning and whitening. The team is friendly and professional.</blockquote>
+        <figcaption class="mt-6 pt-4 border-t border-white/10"><p class="font-semibold">Patient Review</p><p class="text-sm text-white/65">Teeth whitening</p></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="py-20 lg:py-28 bg-mist">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="text-3xl sm:text-4xl font-semibold leading-tight max-w-2xl">Book a visit</h2>
+    <p class="mt-4 text-lg text-slate2 max-w-xl">Send us your details and we will confirm your slot on WhatsApp.</p>
+    <div class="mt-10 grid lg:grid-cols-12 gap-6">
+      <form id="bookForm" class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-ink/5 shadow-sm" novalidate>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div><label for="name" class="block text-sm font-semibold mb-1.5">Full name</label><input id="name" required autocomplete="name" class="w-full rounded-xl border border-ink/20 px-4 py-3 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/30" placeholder="Your name"></div>
+          <div><label for="phone" class="block text-sm font-semibold mb-1.5">Phone number</label><input id="phone" type="tel" required inputmode="numeric" autocomplete="tel" class="w-full rounded-xl border border-ink/20 px-4 py-3 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/30" placeholder="10-digit mobile number"></div>
+          <div><label for="date" class="block text-sm font-semibold mb-1.5">Preferred date</label><input id="date" type="date" required class="w-full rounded-xl border border-ink/20 px-4 py-3 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/30"></div>
+          <div><label for="treat" class="block text-sm font-semibold mb-1.5">Treatment needed</label>
+            <select id="treat" class="w-full rounded-xl border border-ink/20 px-4 py-3 bg-white focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/30">
+              <option>General check-up</option><option>Scaling &amp; cleaning</option><option>Tooth pain / Root canal</option><option>Filling</option><option>Teeth whitening</option><option>Smile design / Veneers</option><option>Braces / Aligners</option><option>Implant / Crown / Bridge</option><option>Tooth extraction</option><option>Child dental care</option>
+            </select></div>
+        </div>
+        <p id="formErr" class="hidden mt-4 text-sm font-semibold text-red-700" role="alert"></p>
+        <button type="submit" class="tx mt-6 w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-[#25D366] text-[#073B1D] px-8 py-3.5 rounded-full font-bold hover:brightness-95"><i data-lucide="send" class="w-5 h-5"></i>Send request on WhatsApp</button>
+      </form>
+
+      <div class="lg:col-span-5 space-y-6">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-ink/5">
+          <h3 class="text-xl font-semibold flex items-center gap-2"><i data-lucide="clock" class="w-5 h-5 text-teal"></i>Clinic hours</h3>
+          <ul class="mt-4 divide-y divide-ink/10">
+            <li class="py-3"><p class="font-semibold">Monday to Saturday</p><p class="mt-1 text-slate2 flex flex-wrap gap-x-5"><span>Morning: [9:00 AM – 1:30 PM]</span><span>Evening: [4:30 PM – 8:30 PM]</span></p></li>
+            <li class="py-3"><p class="font-semibold">Sunday</p><p class="mt-1 text-slate2 flex flex-wrap gap-x-5"><span>Morning: [9:00 AM – 12:30 PM]</span><span>Evening: Closed</span></p></li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-ink/5">
+          <h3 class="text-xl font-semibold">Contact</h3>
+          <address class="not-italic mt-4 space-y-3">
+            <p class="flex gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-teal shrink-0 mt-0.5"></i>[Clinic Address, Street, City, State, PIN]</p>
+            <p class="flex gap-3"><i data-lucide="phone" class="w-5 h-5 text-teal shrink-0 mt-0.5"></i><a class="font-semibold hover:text-teal" href="tel:+910000000000">+91 [Phone Number]</a></p>
+          </address>
+          <div class="mt-5 grid grid-cols-2 gap-3">
+            <a href="tel:+910000000000" class="tx text-center py-3 rounded-full bg-ink text-white font-semibold hover:bg-teal">Call now</a>
+            <a href="https://wa.me/910000000000" target="_blank" rel="noopener" class="tx text-center py-3 rounded-full bg-[#25D366] text-[#073B1D] font-semibold hover:brightness-95">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Placeholder -->
+    <div class="mt-6 rounded-3xl overflow-hidden border border-ink/10 bg-white">
+      <iframe title="Location Map" class="w-full h-72 sm:h-96 border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Dental+Clinic&output=embed"></iframe>
+      <a class="block px-5 py-3 text-sm font-semibold text-teal hover:underline" target="_blank" rel="noopener" href="https://www.google.com/maps">Open in Google Maps</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink text-white/80">
+  <div class="max-w-6xl mx-auto px-5 py-12 grid md:grid-cols-3 gap-8">
+    <div>
+      <p class="brand text-2xl text-white font-semibold">[Clinic Name]</p>
+      <p class="mt-2 text-sm">Healthy smiles, brighter futures.</p>
+    </div>
+    <div class="text-sm space-y-2">
+      <p class="font-semibold text-white">Dental emergency?</p>
+      <p>Call <a class="underline text-white" href="tel:+910000000000">+91 [Phone Number]</a> during clinic hours, or message us on WhatsApp.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-white text-sm">Follow &amp; reach us</p>
+      <div class="mt-3 flex gap-3">
+        <a href="https://wa.me/910000000000" target="_blank" rel="noopener" aria-label="WhatsApp" class="tx w-10 h-10 rounded-full bg-white/10 grid place-items-center hover:bg-white/20"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+        <a href="https://www.google.com/maps" target="_blank" rel="noopener" aria-label="Google Maps" class="tx w-10 h-10 rounded-full bg-white/10 grid place-items-center hover:bg-white/20"><i data-lucide="map-pin" class="w-5 h-5"></i></a>
+        <a href="tel:+910000000000" aria-label="Call" class="tx w-10 h-10 rounded-full bg-white/10 grid place-items-center hover:bg-white/20"><i data-lucide="phone" class="w-5 h-5"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-5 text-center text-xs text-white/60">&copy; <span id="yr"></span> [Clinic Name]. All rights reserved.</div>
+</footer>
+
+<!-- Floating WhatsApp on mobile -->
+<a href="https://wa.me/910000000000" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-full bg-[#25D366] text-[#073B1D] grid place-items-center shadow-xl lg:hidden"><i data-lucide="message-circle" class="w-7 h-7"></i></a>
+
+<script>
+  lucide.createIcons();
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const btn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu');
+  const setMenu = open => { menu.classList.toggle('hidden', !open); btn.setAttribute('aria-expanded', open); };
+  btn.addEventListener('click', () => setMenu(menu.classList.contains('hidden')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+  // Treatment cards: expand one at a time
+  const cards = document.querySelectorAll('.tcard');
+  cards.forEach(c => c.addEventListener('click', () => {
+    const open = c.getAttribute('aria-expanded') === 'true';
+    cards.forEach(x => x.setAttribute('aria-expanded', 'false'));
+    c.setAttribute('aria-expanded', String(!open));
+  }));
+
+  // Booking form -> WhatsApp
+  const clinicWhatsAppNumber = '910000000000'; // Replace with target doctor's 10/12-digit number (with country code)
+  const dateEl = document.getElementById('date');
+  dateEl.min = new Date().toISOString().split('T')[0];
+  document.getElementById('bookForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.replace(/\D/g, '');
+    const date = dateEl.value;
+    const treat = document.getElementById('treat').value;
+    const err = document.getElementById('formErr');
+    let msg = '';
+    if (!name) msg = 'Please enter your name.';
+    else if (phone.length < 10) msg = 'Please enter a valid 10-digit phone number.';
+    else if (!date) msg = 'Please choose a preferred date.';
+    err.textContent = msg; err.classList.toggle('hidden', !msg);
+    if (msg) return;
+    const pretty = new Date(date + 'T00:00').toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' });
+    const text = `Hello, I would like to book an appointment at the clinic.\n\nName: ${name}\nPhone: ${phone}\nPreferred date: ${pretty}\nTreatment: ${treat}`;
+    window.open(`https://wa.me/${clinicWhatsAppNumber}?text=` + encodeURIComponent(text), '_blank', 'noopener');
+  });
+</script>
+</body>
+</html>
